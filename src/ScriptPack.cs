@@ -18,7 +18,7 @@ namespace ScriptCs.MpnsTester
 
         void IScriptPack.Initialize(IScriptPackSession session)
         {
-            session.ImportNamespace("ScriptCs.MpnsTester");
+      
         }
 
         public void Terminate()
