@@ -27,7 +27,7 @@ This will install `ScriptCs.MPNSTester` and the necessary dependencies and copy 
 Once you are at the REPL prompt you have just to require the tester and choose the type of notification that you want to test (toast, tile or raw data): 
 ```csharp
   // First require the MPNSTester
-  > var tester = Require<MpnsTester>();
+  > var tester = Require<NotificationManager>();;
    
   // Choose the type of notification that you want to use (toast, tile or raw)
   > tester.RawDataSend("My Message","My push url");
