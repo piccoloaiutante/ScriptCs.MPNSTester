@@ -24,6 +24,7 @@ This will install `ScriptCs.MPNSTester` and the necessary dependencies and copy 
 
 ## Usage
 
+Once you are at the REPL prompt you have just to require the tester and choose the type of notification that you want to test (toast, tile or raw data): 
 ```csharp
   // First require the MPNSTester
   > var tester = Require<MpnsTester>();
