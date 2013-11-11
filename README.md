@@ -29,7 +29,7 @@ This will install `ScriptCs.MPNSTester` and the necessary dependencies and copy 
   > var tester = Require<MpnsTester>();
    
   // Choose the type of notification that you want to use (toast, tile or raw)
-  > tester.RawDataSend("My Message","My push url");;
+  > tester.RawDataSend("My Message","My push url");
    
 ```
 
