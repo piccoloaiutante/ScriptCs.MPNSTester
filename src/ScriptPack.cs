@@ -18,8 +18,7 @@ namespace ScriptCs.MpnsTester
 
         void IScriptPack.Initialize(IScriptPackSession session)
         {
-            session.ImportNamespace("Microsoft.Diagnostics.Runtime");
-            session.ImportNamespace("ScriptCs.PushNotificationTester");
+            session.ImportNamespace("ScriptCs.MpnsTester");
         }
 
         public void Terminate()

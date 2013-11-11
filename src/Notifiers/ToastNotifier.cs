@@ -14,12 +14,11 @@ namespace ScriptCs.MpnsTester.Notifiers
             _url = url;
         }
 
-        public void Notify(string title,string content)
+        public void Notify(string title, string content)
         {
-            HttpWebRequest sendNotificationRequest = (HttpWebRequest)WebRequest.Create(_url);
+            var sendNotificationRequest = (HttpWebRequest)WebRequest.Create(_url);
 
-            // Create an HTTPWebRequest that posts the toast notification to the Microsoft Push Notification Service.
-            // HTTP POST is the only method allowed to send the notification.
+
             sendNotificationRequest.Method = "POST";
 
 
@@ -32,13 +31,10 @@ namespace ScriptCs.MpnsTester.Notifiers
                            "</wp:Toast> " +
                            "</wp:Notification>";
 
-            // Create an HTTPWebRequest that posts the toast notification to the Microsoft Push Notification Service.
-            // HTTP POST is the only method allowed to send the notification.
             sendNotificationRequest.Method = "POST";
 
             var notificationMessage = Encoding.Default.GetBytes(toastMessage);
 
-            // Set the web request content length.
             sendNotificationRequest.ContentLength = notificationMessage.Length;
             sendNotificationRequest.ContentType = "text/xml";
             sendNotificationRequest.Headers.Add("X-WindowsPhone-Target", "toast");
@@ -50,12 +46,11 @@ namespace ScriptCs.MpnsTester.Notifiers
                 requestStream.Write(notificationMessage, 0, notificationMessage.Length);
             }
 
-            // Send the notification and get the response.
             HttpWebResponse response = null;
 
             try
             {
-                response = (HttpWebResponse) sendNotificationRequest.GetResponse();
+                response = (HttpWebResponse)sendNotificationRequest.GetResponse();
             }
             catch (Exception ex)
             {
