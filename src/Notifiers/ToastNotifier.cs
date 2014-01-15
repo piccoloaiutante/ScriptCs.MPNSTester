@@ -14,7 +14,7 @@ namespace ScriptCs.MpnsTester.Notifiers
             _url = url;
         }
 
-        public void Notify(string title, string content)
+        public void Notify(string title, string content, string url)
         {
             var sendNotificationRequest = (HttpWebRequest)WebRequest.Create(_url);
 
@@ -27,7 +27,7 @@ namespace ScriptCs.MpnsTester.Notifiers
                            "<wp:Toast>" +
                            "<wp:Text1>" + title + "</wp:Text1>" +
                            "<wp:Text2>" + content + "</wp:Text2>" +
-                           "<wp:Param>/Views/SyncView.xaml</wp:Param>" +
+                           "<wp:Param>" + url + "</wp:Param>" +
                            "</wp:Toast> " +
                            "</wp:Notification>";
 
