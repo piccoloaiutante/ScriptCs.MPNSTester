@@ -19,10 +19,10 @@ namespace ScriptCs.MpnsTester
             tileNotifier.Notify(backgroundImage, count, title, backBackgroundImage, backTitle, backContent);
         }
 
-        public void ToastNotificationSend(string title, string content, string url)
+        public void ToastNotificationSend(string title, string content, string pageUrl, string url)
         {
             var toastNotifier = new ToastNotifier(url);
-            toastNotifier.Notify(title, content);
+            toastNotifier.Notify(title, content, pageUrl);
         }
     }
 }
